@@ -132,6 +132,96 @@ int main() {
         }    
         printf("\n");
     }
+
+
+    printf("******Geometria*******\n");
+
+    for (int i = 0; i < 10; i++)
+     {
+        for (int y = 0; y < 10; y++)
+        {
+            tabuleiro[i][y] = 0;
+        }    
+    }
+
+
+    printf("     ");
+     for (int i = 0; i < 10; i++)
+     {
+        printf("%c ", letras[i]);
+     }
+     printf("\n");
+
+     for (int linha = 0; linha <= 2; linha++)
+     {
+         for (int coluna = (linha+2); (linha+2) <= coluna; coluna--)
+         {
+            for (int z = coluna; z >= 2; z--)
+            {
+                tabuleiro[linha][z] = 3;
+                tabuleiro[linha][z-linha] = 3;
+            }
+            
+         }    
+     }
+     
+     for (int linha = 3; linha <= 5; linha++)
+     {
+        int coluna = 2;
+        switch (linha)
+        {
+        case 3:
+        case 5:
+            tabuleiro[linha][coluna] = 3;
+            break;
+        
+        default:
+            coluna = 0;
+            while (coluna <= 4)
+            {
+                tabuleiro[linha][coluna] = 3;
+                coluna++;
+            }
+            break;
+        }
+     }
+
+     for (int linha = 7; linha <= 9; linha++)
+     {
+        int coluna = 2;
+        switch (linha)
+        {
+        case 7:
+        case 9:
+            tabuleiro[linha][coluna] = 3;
+            break;
+        
+        default:
+            coluna = 1;
+            while (coluna <= 3)
+            {
+                tabuleiro[linha][coluna] = 3;
+                coluna++;
+            }
+            break;
+        }
+     }
+
+
+
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 9)
+            printf("%i   ",i+1);
+        else
+            printf("%i    ",i+1);
+        for (int y = 0; y < 10; y++)
+        {
+            printf("%i ",tabuleiro[i][y]);
+        }    
+        printf("\n");
+    }
      
       
 
